@@ -1,0 +1,95 @@
+<template>
+  <header
+    class="fixed left-0 right-0 z-10 m-auto flex h-20 w-11/12 items-center justify-between sm:w-4/5"
+  >
+    <div>
+      <img src="/images/logo.svg" alt="" />
+    </div>
+
+    <div class="lg:hidden">
+      <transition name="slideOut">
+        <div class="lg:hidden" :class="{ hidden: isHidden }" v-if="!isHidden">
+          <img
+            @click="isHidden = !isHidden"
+            :class="{ hidden: isHidden }"
+            src="/images/icon-hamburger.svg"
+            alt=""
+          />
+        </div>
+      </transition>
+      <transition name="slideIn">
+        <div class="lg:hidden" :class="{ hidden: !isHidden }" v-if="isHidden">
+          <img
+            @click="isHidden = !isHidden"
+            src="/images/icon-close.svg"
+            alt=""
+          />
+        </div>
+      </transition>
+    </div>
+
+    <!-- <div class="lg:hidden" :class="{ hidden: !isHidden }" v-if="isHidden"></div> -->
+
+    <div class="hidden lg:flex">
+      <ul class="flex gap-5">
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Product</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="">Community</a></li>
+      </ul>
+    </div>
+    <div class="hidden lg:block">
+      <Button />
+    </div>
+    <!-- mobile menu -->
+    <transition name="fade">
+      <div
+        v-if="isHidden"
+        :class="{ hidden: !isHidden }"
+        class="fixed left-1/2 top-0 z-50 m-auto flex w-11/12 max-w-sm -translate-x-1/2 translate-y-28 justify-center bg-white py-10 lg:hidden"
+      >
+        <div class="max-h-[30vh] overflow-y-auto">
+          <ul class="flex flex-col items-center gap-4 text-lg font-bold">
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Careers</a></li>
+            <li><a href="">Community</a></li>
+          </ul>
+        </div>
+      </div>
+    </transition>
+    <!-- <transition name="fade">
+      <div
+        v-if="isHidden"
+        :class="{ hidden: !isHidden }"
+        class="absolute left-1/2 top-1/2 z-50 m-auto flex w-11/12 max-w-sm -translate-x-1/2 translate-y-1/2 justify-center bg-white py-10"
+      >
+        <ul class="flex flex-col items-center gap-4 text-lg font-bold">
+          <li><a href="">Pricing</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">Community</a></li>
+        </ul>
+      </div>
+    </transition> -->
+  </header>
+  <transition name="fade">
+    <div
+      v-if="isHidden"
+      :class="{ hidden: !isHidden }"
+      class="fixed inset-0 bg-black bg-gradient-to-b from-white to-black opacity-30 lg:hidden"
+    ></div
+  ></transition>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import Button from "./components/Button.vue";
+
+const isHidden = ref(false);
+</script>
+
+<style scoped></style>

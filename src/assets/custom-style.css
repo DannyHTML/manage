@@ -1,0 +1,39 @@
+.fade-enter-active,
+.fade-leave-active {
+  @apply duration-300;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+/* SlideOut */
+
+.slideOut.move,
+.slideOut-enter-active,
+.slideOut-leave-active {
+  @apply duration-300;
+  position: relative;
+}
+
+.slideOut-enter-from,
+.slideOut-leave-to {
+  @apply opacity-0;
+  transform: translateY(-200%);
+}
+
+/* SlideIn */
+
+.slideIn.move,
+.slideIn-enter-active,
+.slideIn-leave-active {
+  @apply duration-300;
+  position: relative;
+}
+
+.slideIn-enter-from,
+.slideIn-leave-to {
+  @apply opacity-0;
+  transform: translateX(200%);
+}

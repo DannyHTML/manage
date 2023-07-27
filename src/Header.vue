@@ -11,25 +11,34 @@
     <!-- test test -->
 
     <div class="lg:hidden">
-      <transition name="slideOut">
-        <div class="lg:hidden" :class="{ hidden: isHidden }" v-if="!isHidden">
+      <div class="lg:hidden">
+        <transition name="slideOut">
           <img
+            v-if="!isHidden"
             @click="isHidden = !isHidden"
             :class="{ hidden: isHidden }"
             src="/images/icon-hamburger.svg"
             alt=""
           />
-        </div>
-      </transition>
-      <transition name="slideIn">
-        <div class="lg:hidden" :class="{ hidden: !isHidden }" v-if="isHidden">
+        </transition>
+        <transition name="slideIn">
           <img
+            v-if="isHidden"
             @click="isHidden = !isHidden"
+            :class="{ hidden: !isHidden }"
             src="/images/icon-close.svg"
             alt=""
           />
-        </div>
-      </transition>
+        </transition>
+      </div>
+
+      <!-- <transition name="slideIn">
+        <div
+          class="lg:hidden"
+          :class="{ hidden: !isHidden }"
+          v-if="isHidden"
+        ></div>
+      </transition> -->
     </div>
 
     <!-- <div class="lg:hidden" :class="{ hidden: !isHidden }" v-if="isHidden"></div> -->
@@ -64,21 +73,6 @@
         </div>
       </div>
     </transition>
-    <!-- <transition name="fade">
-      <div
-        v-if="isHidden"
-        :class="{ hidden: !isHidden }"
-        class="absolute left-1/2 top-1/2 z-50 m-auto flex w-11/12 max-w-sm -translate-x-1/2 translate-y-1/2 justify-center bg-white py-10"
-      >
-        <ul class="flex flex-col items-center gap-4 text-lg font-bold">
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Product</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Careers</a></li>
-          <li><a href="">Community</a></li>
-        </ul>
-      </div>
-    </transition> -->
   </header>
   <transition name="fade">
     <div

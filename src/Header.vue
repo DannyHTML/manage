@@ -6,6 +6,8 @@
       <img src="/images/logo.svg" alt="" />
     </div>
 
+    <!-- !Make the transition smoother -->
+
     <div class="lg:hidden">
       <transition name="slideOut">
         <div class="lg:hidden" :class="{ hidden: isHidden }" v-if="!isHidden">

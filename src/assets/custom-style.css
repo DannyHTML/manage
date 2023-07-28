@@ -28,16 +28,16 @@
 
 /* SlideIn */
 
-.slideIn-enter-active,
+/* .slideIn-enter-active,
 .slideIn-leave-active {
-  @apply relative delay-300 duration-300;
+  @apply relative duration-300;
 }
 
 .slideIn-enter-from,
 .slideIn-leave-to {
-  @apply translate-x-full opacity-0;
+  @apply opacity-0;
 }
 .slideIn-enter-to,
 .slideIn-leave-from {
-  @apply translate-x-0 opacity-100;
-}
+  @apply opacity-100 delay-300;
+} */

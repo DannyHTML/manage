@@ -11,34 +11,27 @@
     <!-- test test -->
 
     <div class="lg:hidden">
-      <div class="lg:hidden">
-        <transition name="slideOut">
+      <transition name="slideOut">
+        <div v-if="!isHidden" class="lg:hidden">
           <img
-            v-if="!isHidden"
             @click="isHidden = !isHidden"
             :class="{ hidden: isHidden }"
             src="/images/icon-hamburger.svg"
             alt=""
           />
-        </transition>
-        <transition name="slideIn">
+        </div>
+      </transition>
+      <transition name="slideOut">
+        <div v-if="isHidden">
           <img
-            v-if="isHidden"
+            class="w-[25px]"
             @click="isHidden = !isHidden"
             :class="{ hidden: !isHidden }"
             src="/images/icon-close.svg"
             alt=""
           />
-        </transition>
-      </div>
-
-      <!-- <transition name="slideIn">
-        <div
-          class="lg:hidden"
-          :class="{ hidden: !isHidden }"
-          v-if="isHidden"
-        ></div>
-      </transition> -->
+        </div>
+      </transition>
     </div>
 
     <!-- <div class="lg:hidden" :class="{ hidden: !isHidden }" v-if="isHidden"></div> -->

@@ -10,17 +10,19 @@ import AboutOptions from "./AboutOptions.vue";
   <div class="pb-28">
     <Header />
   </div>
-  <div class="mb-14 sm:justify-between md:flex">
+  <div class="mb-14 md:flex md:justify-around">
     <div class="order-1">
       <Graph />
     </div>
     <SectionFirst />
   </div>
-  <div>
+  <div class="lg:flex lg:justify-around">
     <div class="mb-5">
       <About />
     </div>
-    <AboutOptions />
+    <div>
+      <AboutOptions />
+    </div>
   </div>
 </template>
 

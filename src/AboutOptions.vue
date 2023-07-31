@@ -1,13 +1,15 @@
 <template>
   <div v-for="item in data" :key="item.id">
     <div class="mb-10">
-      <h3 class="mb-3 ml-4 rounded-l-full bg-bgShape py-0.5 font-bold">
+      <h3
+        class="mb-3 ml-4 rounded-l-full bg-bgShape py-0.5 font-bold md:bg-opacity-0"
+      >
         <span
           class="rounded-l-full rounded-r-full bg-primary px-3 py-1 text-white"
           >{{ item.Number }}</span
         ><span class="ml-4 text-sm">{{ item.Title }}</span>
       </h3>
-      <p class="mx-4">{{ item.Description }}</p>
+      <p class="mx-4 max-w-lg">{{ item.Description }}</p>
     </div>
   </div>
 </template>

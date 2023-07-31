@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "hsl(12, 88%, 59%)",
         secondary: "hsl(228, 39%, 23%)",
+        bgShape: "hsl(13, 100%, 96%)",
       },
     },
     fontFamily: {

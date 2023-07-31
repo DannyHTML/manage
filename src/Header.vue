@@ -66,12 +66,15 @@
         </div>
       </div>
     </transition>
+    <div class="fixed -right-20 top-10 -z-10 -rotate-45">
+      <div class="h-40 w-80 rounded-l-full bg-bgShape"></div>
+    </div>
   </header>
   <transition name="fade">
     <div
       v-if="isHidden"
       :class="{ hidden: !isHidden }"
-      class="fixed inset-0 bg-black bg-gradient-to-b from-white to-black opacity-30 lg:hidden"
+      class="fixed inset-0 bg-gradient-to-b from-white to-black opacity-30 lg:hidden"
     ></div
   ></transition>
 </template>
@@ -80,7 +83,7 @@
 import { ref } from "vue";
 import Button from "./components/Button.vue";
 
-const isHidden = ref(false);
+const isHidden = ref<boolean>(false);
 </script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed left-0 right-0 z-10 m-auto flex h-20 w-11/12 items-center justify-between sm:w-4/5"
+    class="fixed left-0 right-0 z-50 m-auto flex h-20 w-11/12 items-center justify-between sm:w-4/5"
   >
     <div>
       <img src="/images/logo.svg" alt="" />
@@ -66,9 +66,12 @@
         </div>
       </div>
     </transition>
-    <div class="fixed -right-20 top-10 -z-10 -rotate-45">
+
+    <!-- bg-shape below -->
+
+    <!-- <div class="fixed -right-20 top-10 -z-10 -rotate-45">
       <div class="h-40 w-80 rounded-l-full bg-bgShape"></div>
-    </div>
+    </div> -->
   </header>
   <transition name="fade">
     <div

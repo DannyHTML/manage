@@ -4,6 +4,7 @@ import Graph from "./Graph.vue";
 import SectionFirst from "./SectionFirst.vue";
 import About from "./About.vue";
 import AboutOptions from "./AboutOptions.vue";
+import Testimonials from "./Testimonials.vue";
 </script>
 
 <template>
@@ -24,6 +25,7 @@ import AboutOptions from "./AboutOptions.vue";
       <AboutOptions />
     </div>
   </div>
+  <Testimonials />
 </template>
 
 <style scoped></style>

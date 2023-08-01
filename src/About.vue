@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-xs flex-col items-center justify-center">
+  <div class="m-auto max-w-xs">
     <div>
       <h2 class="mb-4 text-center text-2xl font-bold">
         What’s different about Manage?

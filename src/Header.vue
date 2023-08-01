@@ -86,7 +86,7 @@
     <div
       v-if="isHidden"
       :class="{ hidden: !isHidden }"
-      class="fixed inset-0 bg-gradient-to-b from-white to-black opacity-30 lg:hidden"
+      class="fixed inset-0 z-40 bg-gradient-to-b from-white to-black opacity-30 lg:hidden"
     ></div
   ></transition>
 </template>

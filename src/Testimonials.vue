@@ -6,18 +6,20 @@
     <div
       v-for="item in comments"
       :key="item.id"
-      class="relative mx-5 mb-20 max-w-sm bg-bgTestimonial p-3 text-center"
+      class="relative mx-5 mb-20 flex max-w-sm bg-bgTestimonial p-3 text-center"
     >
-      <div
-        class="absolute left-1/2 top-0 w-20 -translate-x-1/2 -translate-y-1/2"
-      >
-        <!-- <img src="/images/avatar-ali.png" alt="" /> -->
-        <img :src="item.image" alt="" />
+      <div>
+        <div
+          class="absolute left-1/2 top-0 w-20 -translate-x-1/2 -translate-y-1/2"
+        >
+          <!-- <img src="/images/avatar-ali.png" alt="" /> -->
+          <img :src="item.image" alt="" />
+        </div>
+        <h3 class="mb-6 pt-14 text-lg font-bold capitalize">
+          {{ item.title }}
+        </h3>
+        <p class="">{{ item.description }}</p>
       </div>
-      <h3 class="mb-6 pt-14 text-lg font-bold capitalize">
-        {{ item.title }}
-      </h3>
-      <p class="">{{ item.description }}</p>
     </div>
     <div class="mb-10 flex justify-center gap-2">
       <input @click="test" type="radio" name="name" id="" />

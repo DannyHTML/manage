@@ -1,7 +1,17 @@
 <template>
   <header
-    class="fixed left-0 right-0 z-50 m-auto flex h-20 w-11/12 items-center justify-between sm:w-4/5"
+    class="fixed left-0 right-0 z-50 m-auto flex h-20 w-11/12 items-center justify-between px-5 sm:w-4/5"
   >
+    <transition name="fade">
+      <div
+        v-if="!scrollActive"
+        :class="{
+          hidden: scrollActive,
+          'absolute left-0 top-0 -z-10 h-full w-full rounded-b-3xl bg-white shadow-2xl':
+            !scrollActive,
+        }"
+      ></div>
+    </transition>
     <div>
       <img src="/images/logo.svg" alt="" />
     </div>
@@ -52,7 +62,6 @@
     <transition name="fade">
       <div
         v-if="isHidden"
-        :class="{ hidden: !isHidden }"
         class="fixed left-1/2 top-0 z-50 m-auto flex w-11/12 max-w-sm -translate-x-1/2 translate-y-28 justify-center bg-white py-10 lg:hidden"
       >
         <div class="max-h-[30vh] overflow-y-auto">
@@ -73,7 +82,7 @@
       <div class="h-40 w-80 rounded-l-full bg-bgShape"></div>
     </div> -->
   </header>
-  <transition name="fade">
+  <transition name="overlay">
     <div
       v-if="isHidden"
       :class="{ hidden: !isHidden }"
@@ -83,10 +92,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import Button from "./components/Button.vue";
 
-const isHidden = ref<boolean>(false);
+const isHidden = ref(false);
+
+const scrollActive = ref(true);
+
+const scrollEffect = () => {
+  scrollActive.value = window.scrollY <= 60;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", scrollEffect);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", scrollEffect);
+});
 </script>
 
 <style scoped></style>

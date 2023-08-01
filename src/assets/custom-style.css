@@ -9,6 +9,21 @@
   @apply opacity-0;
 }
 
+.overlay-enter-active,
+.overlay-leave-active {
+  @apply duration-300;
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+  @apply -translate-x-1/2 opacity-0;
+}
+
+.overlay-enter-to,
+.overlay-leave-from {
+  @apply translate-x-0  delay-100;
+}
+
 /* SlideOut */
 
 .slideOut-enter-active,

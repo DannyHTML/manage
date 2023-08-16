@@ -6,6 +6,7 @@ import About from "./About.vue";
 import AboutOptions from "./AboutOptions.vue";
 import Testimonials from "./Testimonials.vue";
 import Banner from "./Banner.vue";
+import Footer from "./Footer.vue";
 </script>
 
 <template>
@@ -28,6 +29,7 @@ import Banner from "./Banner.vue";
   </div>
   <Testimonials />
   <Banner />
+  <Footer />
 </template>
 
 <style scoped></style>

@@ -5,6 +5,7 @@ import SectionFirst from "./SectionFirst.vue";
 import About from "./About.vue";
 import AboutOptions from "./AboutOptions.vue";
 import Testimonials from "./Testimonials.vue";
+import Banner from "./Banner.vue";
 </script>
 
 <template>
@@ -26,6 +27,7 @@ import Testimonials from "./Testimonials.vue";
     </div>
   </div>
   <Testimonials />
+  <Banner />
 </template>
 
 <style scoped></style>

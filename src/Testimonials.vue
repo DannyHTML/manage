@@ -3,13 +3,11 @@
     <div class="mb-24 text-center">
       <h2 class="text-3xl font-bold">What they've said</h2>
     </div>
-    <div
-      v-for="(item, index) in comments"
-      :key="item.id"
-      v-show="shouldDisplayComment(index)"
-      class="relative mx-5 mb-20 flex max-w-sm bg-bgTestimonial p-3 text-center"
-    >
-      <div>
+    <div v-for="(item, index) in comments" :key="item.id">
+      <div
+        v-if="shouldDisplayComment(index)"
+        class="relative mx-5 mb-20 flex max-w-sm bg-bgTestimonial p-3 text-center"
+      >
         <div
           class="absolute left-1/2 top-0 w-20 -translate-x-1/2 -translate-y-1/2"
         >
@@ -21,7 +19,15 @@
         <p class="">{{ item.description }}</p>
       </div>
     </div>
+
     <div class="mb-10 flex justify-center gap-2">
+      <label
+        v-for="(item, index) in comments"
+        :key="item.id"
+        class="cursor-pointer"
+      >
+        <input type="radio" :value="index" v-model="selectedCommentIndex" />
+      </label>
       <!-- test -->
     </div>
     <div class="mb-20 text-center">
@@ -74,12 +80,8 @@ const comments = [
 
 const selectedCommentIndex = ref<number>(0);
 
-const selectComment = (index: number) => {
-  console.log("Selected comment index:", index);
-  selectedCommentIndex.value = index;
-};
-
 const shouldDisplayComment = (index: number) => {
+  console.log(selectedCommentIndex.value);
   return index === selectedCommentIndex.value;
 };
 </script>

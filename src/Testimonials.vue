@@ -13,10 +13,12 @@
         >
           <img :src="item.image" alt="Profile pic" />
         </div>
-        <h3 class="mb-6 pt-14 text-lg font-bold capitalize">
-          {{ item.title }}
-        </h3>
-        <p class="">{{ item.description }}</p>
+        <div>
+          <h3 class="mb-6 pt-14 text-lg font-bold capitalize">
+            {{ item.title }}
+          </h3>
+          <p class="">{{ item.description }}</p>
+        </div>
       </div>
     </div>
 

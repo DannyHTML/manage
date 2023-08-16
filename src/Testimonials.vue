@@ -4,16 +4,16 @@
       <h2 class="text-3xl font-bold">What they've said</h2>
     </div>
     <div
-      v-for="item in comments"
+      v-for="(item, index) in comments"
       :key="item.id"
+      v-show="index === selectedCommentIndex"
       class="relative mx-5 mb-20 flex max-w-sm bg-bgTestimonial p-3 text-center"
     >
       <div>
         <div
           class="absolute left-1/2 top-0 w-20 -translate-x-1/2 -translate-y-1/2"
         >
-          <!-- <img src="/images/avatar-ali.png" alt="" /> -->
-          <img :src="item.image" alt="" />
+          <img :src="item.image" alt="Profile pic" />
         </div>
         <h3 class="mb-6 pt-14 text-lg font-bold capitalize">
           {{ item.title }}
@@ -22,10 +22,15 @@
       </div>
     </div>
     <div class="mb-10 flex justify-center gap-2">
-      <input @click="test" type="radio" name="name" id="" />
-      <input type="radio" name="name" id="" />
-      <input type="radio" name="name" id="" />
-      <input type="radio" name="name" id="" />
+      <input
+        v-for="(item, index) in comments"
+        :key="index"
+        @click="selectComment(index)"
+        type="radio"
+        name="comment"
+        :id="item.title"
+        :checked="index === selectedCommentIndex"
+      />
     </div>
     <div class="mb-20 text-center">
       <Button />
@@ -34,7 +39,15 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import Button from "./components/Button.vue";
+
+interface comments {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}
 
 const comments = [
   {
@@ -67,8 +80,11 @@ const comments = [
   },
 ];
 
-const test = () => {
-  console.log("test");
+const selectedCommentIndex = ref<number>(0);
+
+const selectComment = (index: number) => {
+  console.log("Selected comment index:", index);
+  selectedCommentIndex.value = index;
 };
 </script>
 

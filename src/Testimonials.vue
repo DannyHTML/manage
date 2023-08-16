@@ -6,7 +6,7 @@
     <div
       v-for="(item, index) in comments"
       :key="item.id"
-      v-show="index === selectedCommentIndex"
+      v-show="shouldDisplayComment(index)"
       class="relative mx-5 mb-20 flex max-w-sm bg-bgTestimonial p-3 text-center"
     >
       <div>
@@ -22,15 +22,7 @@
       </div>
     </div>
     <div class="mb-10 flex justify-center gap-2">
-      <input
-        v-for="(item, index) in comments"
-        :key="index"
-        @click="selectComment(index)"
-        type="radio"
-        name="comment"
-        :id="item.title"
-        :checked="index === selectedCommentIndex"
-      />
+      <!-- test -->
     </div>
     <div class="mb-20 text-center">
       <Button />
@@ -85,6 +77,10 @@ const selectedCommentIndex = ref<number>(0);
 const selectComment = (index: number) => {
   console.log("Selected comment index:", index);
   selectedCommentIndex.value = index;
+};
+
+const shouldDisplayComment = (index: number) => {
+  return index === selectedCommentIndex.value;
 };
 </script>
 
